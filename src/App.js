@@ -74,8 +74,8 @@ const App = () => {
       const user = await loginService.login({
         username, password,
       })
+      noteService.setToken(user.token)
       setUser(user)
-      console.log(user)
       setUsername('')
       setPassword('')
     } catch (exception) {
@@ -85,7 +85,6 @@ const App = () => {
       }, 5000)
     }
   }
-console.log(newNote)
 
   return (
     <div>
